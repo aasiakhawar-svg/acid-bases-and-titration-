@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acids, Bases and Titration · IG 10 Indigo</title>
+<style>
+:root{--bg:#f4f1ff;--card:#fff;--tx:#1f1d3a;--mu:#5b5880;--ac:#5b3fd1;--ac2:#e8e2ff;--ok:#16a34a;--bd:#d9d2f5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15132b;--card:#201d40;--tx:#efedff;--mu:#aaa6d6;--ac:#a78bfa;--ac2:#2d2960;--bd:#3a3570;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",system-ui,Arial,sans-serif;line-height:1.5}
+header{background:linear-gradient(120deg,#5b3fd1,#ec4899,#f59e0b);color:#fff;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:1.6rem}header p{margin:4px 0 0;opacity:.95;font-size:.95rem}
+nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav button,.btn{border:2px solid var(--ac);background:var(--card);color:var(--ac);padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer;font-size:.9rem}
+nav button.on,.btn.pri{background:var(--ac);color:#fff}
+main{max-width:900px;margin:auto;padding:8px 14px 40px}
+section{display:none;animation:fade .5s}section.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1}}
+.card{background:var(--card);border:2px solid var(--bd);border-radius:18px;padding:16px;margin:12px 0}
+h2{margin:6px 0;color:var(--ac)}.mu{color:var(--mu);font-size:.9rem}
+.row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1 1 240px}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:.85rem}
+.ph{height:26px;border-radius:13px;background:linear-gradient(90deg,#e11d48,#f97316,#facc15,#22c55e,#06b6d4,#3b82f6,#7c3aed)}
+input[type=range]{width:100%}
+.beaker{height:110px;border:3px solid var(--mu);border-top:none;border-radius:0 0 22px 22px;width:130px;margin:auto;position:relative;overflow:hidden}
+.beaker .liq{position:absolute;bottom:0;left:0;right:0;height:75%;transition:background .5s}
+.ion{position:absolute;font-weight:800;font-size:.8rem;animation:float 3s infinite ease-in-out}
+@keyframes float{50%{transform:translateY(-14px)}}
+.bub{position:absolute;bottom:0;width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.85);animation:rise 2s infinite}
+@keyframes rise{to{transform:translateY(-90px);opacity:0}}
+.eq{font-size:1.1rem;font-weight:700;text-align:center;padding:10px;background:var(--ac2);border-radius:12px}
+.bur{width:34px;height:210px;border:3px solid var(--mu);border-radius:6px 6px 2px 2px;margin:auto;position:relative;overflow:hidden;background:rgba(150,150,200,.12)}
+.bur .lv{position:absolute;left:0;right:0;bottom:0;background:#f87171;transition:height .3s}
+.tap{width:6px;height:18px;background:var(--mu);margin:0 auto}
+.drop{width:8px;height:12px;border-radius:50%;background:#f87171;margin:0 auto;opacity:0}
+.drop.go{animation:fall .5s}@keyframes fall{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(40px)}}
+.flask{width:110px;height:110px;margin:auto;border:3px solid var(--mu);border-radius:10px 10px 46px 46px;position:relative;overflow:hidden;clip-path:polygon(35% 0,65% 0,65% 30%,100% 100%,0 100%,35% 30%);border:none;background:var(--mu)}
+.flask i{position:absolute;inset:3px;clip-path:inherit;background:#facc15;transition:background .4s}
+.step{display:flex;gap:10px;align-items:center;padding:10px;border-radius:12px;border:2px solid var(--bd);margin:6px 0;opacity:.4;transition:.4s}
+.step.on{opacity:1;border-color:var(--ac);background:var(--ac2);transform:scale(1.02)}
+.step b{font-size:1.5rem}
+.q{margin:10px 0}.q button{display:block;width:100%;text-align:left;margin:4px 0;padding:9px;border-radius:10px;border:2px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer}
+.q button.r{background:#bbf7d0;border-color:var(--ok);color:#14532d}.q button.w{background:#fecaca;border-color:#dc2626;color:#7f1d1d}
+.calc div{padding:8px 12px;margin:6px 0;border-left:5px solid var(--ac);background:var(--ac2);border-radius:8px;display:none}.calc div.on{display:block;animation:fade .4s}
+footer{text-align:center;padding:18px;font-size:.8rem;color:var(--mu)}
+</style></head><body>
+<header><h1>🧪 Acids, Bases and Titration</h1><p>IG 10 Indigo · Edexcel iGCSE Chemistry 4CH1 · Spec 2.28C–2.43 (Chapters 16 and 17)</p><p style="margin-top:10px;font-weight:700;font-size:1.05rem;letter-spacing:.5px">👩‍🏫 Prepared by Aasia Khawar</p></header>
+<nav id="nav"></nav>
+<main>
+
+<section id="s0" class="on">
+<div class="card"><h2>1 · Acids, alkalis and the pH scale</h2>
+<p><b style="color:#e11d48">Acids</b> form hydrogen ions (H⁺) in water. <b style="color:#7c3aed">Alkalis</b> form hydroxide ions (OH⁻). Slide the pH and watch the ions and indicators change!</p>
+<div class="ph"></div><input type="range" id="ph" min="0" max="14" step="1" value="7">
+<p style="text-align:center;margin:0"><span class="pill" id="phv" style="background:#22c55e;color:#fff">pH 7 · neutral</span></p>
+<div class="row" style="margin-top:10px">
+<div style="text-align:center"><div class="beaker"><div class="liq" id="liq"></div><div id="ions"></div></div><p class="mu">Universal indicator</p></div>
+<div id="ind" class="mu"></div></div></div>
+<div class="card"><b>Key words:</b> a <b>base</b> neutralises an acid (metal oxides and hydroxides). An <b>alkali</b> is a base that dissolves in water to give OH⁻. Neutralisation: <b>H⁺ + OH⁻ → H₂O</b>. Litmus only changes colour when H⁺ ions are present, so dry HCl gas in an organic solvent does <b>not</b> turn blue litmus red, but HCl in water does.</div>
+</section>
+
+<section id="s1">
+<div class="card"><h2>2 · Reactions of acids</h2>
+<p class="mu">Pick a reaction:</p>
+<div style="display:flex;gap:6px;flex-wrap:wrap" id="rb"></div>
+<div class="row" style="margin-top:10px"><div style="text-align:center"><div class="beaker"><div class="liq" id="rl" style="background:#bae6fd"></div><div id="rbub"></div></div></div>
+<div><div class="eq" id="req"></div><p id="rtx"></p></div></div></div>
+<div class="card"><b>Naming salts:</b> hydrochloric → <b>chloride</b> · sulfuric → <b>sulfate</b> · nitric → <b>nitrate</b> · phosphoric → <b>phosphate</b>.<br><b>Balance:</b> 3Ca(OH)₂ + 2H₃PO₄ → Ca₃(PO₄)₂ + 6H₂O</div>
+</section>
+
+<section id="s2">
+<div class="card"><h2>3 · Making pure, dry crystals of a soluble salt</h2>
+<p class="mu">Example: magnesium (or copper(II) oxide) + acid. Click Next to walk through the method.</p>
+<div id="steps"></div>
+<button class="btn pri" id="nx">Next step ▶</button> <button class="btn" id="rs">Restart</button>
+<p class="mu" style="margin-top:10px">💡 Why excess solid? It makes sure all the acid has reacted and is easy to filter off. Copper metal can't be used because it does not react with dilute acids.</p></div>
+</section>
+
+<section id="s3">
+<div class="card"><h2>4 · Virtual titration</h2>
+<p class="mu">25.0 cm³ of NaOH + methyl orange (yellow in alkali, red in acid). Add acid from the burette until the colour just changes. Go fast first (rough titration), then drop by drop!</p>
+<div class="row"><div style="text-align:center"><div class="bur"><div class="lv" id="lv"></div></div><div class="tap"></div><div class="drop" id="dr"></div></div>
+<div style="text-align:center"><div class="flask"><i id="fl"></i></div><p class="mu">on a white tile ⬜</p></div>
+<div><p>Acid added: <b id="vol">0.00</b> cm³</p><p id="msg" class="mu">Flask is yellow (alkaline).</p>
+<button class="btn" id="a1">+1 cm³</button> <button class="btn" id="a2">+1 drop (0.05)</button><br><br><button class="btn" id="a3">Reset</button></div></div></div>
+<div class="card"><b>Good practice:</b> pipette for 25.0 cm³ · rough titration first · swirl · white tile · drop by drop near the end-point · repeat until <b>concordant</b> (within 0.20 cm³) · mean uses only concordant results.</div>
+</section>
+
+<section id="s4">
+<div class="card"><h2>5 · Titration calculation (Q10d)</h2>
+<p>25.0 cm³ of 0.500 mol/dm³ KOH needs a mean 26.50 cm³ H₂SO₄. &nbsp; 2KOH + H₂SO₄ → K₂SO₄ + 2H₂O</p>
+<div class="calc" id="calc">
+<div>① Moles KOH = 0.500 × 25.0 ÷ 1000 = <b>0.0125 mol</b></div>
+<div>② Ratio 2 KOH : 1 H₂SO₄, so moles H₂SO₄ = 0.0125 ÷ 2 = <b>0.00625 mol</b></div>
+<div>③ Concentration = moles ÷ volume (dm³) = 0.00625 ÷ (26.50 ÷ 1000)</div>
+<div>✅ Concentration of H₂SO₄ = <b>0.236 mol/dm³</b></div></div>
+<button class="btn pri" id="cn">Reveal next step ▶</button> <button class="btn" id="cr">Reset</button></div>
+<div class="card"><b>Concordant results (Q10c):</b> 27.40, 27.65, 27.30, 27.35. Concordant = 27.40, 27.30, 27.35 (within 0.20 of each other). Mean = (27.40 + 27.30 + 27.35) ÷ 3 = <b>27.35 cm³</b>. Burette reading: final 32.45, initial 4.15, volume = 28.30 cm³.</div>
+</section>
+
+<section id="s5">
+<div class="card"><h2>6 · Quick quiz</h2><div id="quiz"></div><p><b id="sc"></b></p></div>
+</section>
+</main>
+<footer>© Aasia Khawar · All rights reserved · IG 10 Indigo Chemistry (4CH1)</footer>
+<script>
+var $=function(i){return document.getElementById(i)};
+var tabs=["Acids & pH","Reactions","Making salts","Titration","Calculation","Quiz"];
+tabs.forEach(function(t,i){var b=document.createElement("button");b.textContent=t;if(!i)b.className="on";b.onclick=function(){document.querySelectorAll("section").forEach(function(s,j){s.classList.toggle("on",j==i)});[].forEach.call($("nav").children,function(c,j){c.classList.toggle("on",j==i)})};$("nav").appendChild(b)});
+/* pH */
+var uc=["#dc2626","#ef4444","#f97316","#fb923c","#facc15","#a3e635","#4ade80","#22c55e","#2dd4bf","#06b6d4","#3b82f6","#4f46e5","#6d28d9","#7c3aed","#6b21a8"];
+function setPh(){var p=+$("ph").value;$("liq").style.background=uc[p];var k=p<7?"acidic":p>7?"alkaline":"neutral";var v=$("phv");v.textContent="pH "+p+" · "+k;v.style.background=uc[p];
+var h="",n=Math.abs(7-p)+1,sy=p<7?"H⁺":p>7?"OH⁻":"";if(p==7)n=0;for(var i=0;i<n;i++)h+='<span class="ion" style="left:'+(8+Math.random()*80)+'%;top:'+(10+Math.random()*60)+'%;color:#fff;animation-delay:'+i*.2+'s">'+sy+"</span>";$("ions").innerHTML=h;
+var l=p<7?["red","red","colourless","red/orange"]:p>7?["blue","yellow","pink","blue/purple"]:["purple","orange","colourless","green"];
+$("ind").innerHTML="<b>Indicators at this pH</b><br>🟣 Litmus: <b>"+(p<7?"red":p>7?"blue":"purple")+"</b><br>🟠 Methyl orange: <b>"+(p<7?"red":"yellow")+"</b><br>🌸 Phenolphthalein: <b>"+(p>7?"pink":"colourless")+"</b><br>🌈 Universal: <b>"+(p<7?"red/orange":p>7?"blue/purple":"green")+"</b>"}
+$("ph").oninput=setPh;setPh();
+/* reactions */
+var R=[["Acid + metal","Mg + 2HCl → MgCl₂ + H₂","Salt + hydrogen. Fizzing seen; hydrogen gives a squeaky pop with a lit splint.","#bae6fd",1],
+["Acid + base","CuO + H₂SO₄ → CuSO₄ + H₂O","Salt + water. Black CuO dissolves to give a blue solution of copper(II) sulfate.","#38bdf8",0],
+["Acid + alkali","2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O","Neutralisation: H⁺ + OH⁻ → H₂O. Salt + water.","#fde68a",0],
+["Acid + carbonate","CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂","Salt + water + carbon dioxide. Fizzing; CO₂ turns limewater milky.","#e5e7eb",1]];
+R.forEach(function(r,i){var b=document.createElement("button");b.className="btn"+(i?"":" pri");b.textContent=r[0];b.onclick=function(){[].forEach.call($("rb").children,function(c,j){c.className="btn"+(j==i?" pri":"")});$("req").textContent=r[1];$("rtx").textContent=r[2];$("rl").style.background=r[3];var h="";if(r[4])for(var k=0;k<9;k++)h+='<span class="bub" style="left:'+(10+k*10)+'%;animation-delay:'+k*.22+'s"></span>';$("rbub").innerHTML=h};$("rb").appendChild(b)});
+$("rb").children[0].click();
+/* salt steps */
+var S=[["🧪","Add the solid (excess) to warm dilute acid, stirring, until no more reacts."],["🔍","Filter off the excess solid. The filtrate is the salt solution."],["🔥","Evaporate some water gently to make a saturated solution."],["❄️","Leave to cool and crystallise."],["🧻","Filter the crystals, wash with a little cold water and dry between filter paper."]],si=-1;
+$("steps").innerHTML=S.map(function(s,i){return '<div class="step" id="st'+i+'"><b>'+s[0]+"</b><span><b>Step "+(i+1)+":</b> "+s[1]+"</span></div>"}).join("");
+$("nx").onclick=function(){if(si<4){si++;$("st"+si).classList.add("on")}};$("rs").onclick=function(){si=-1;S.forEach(function(s,i){$("st"+i).classList.remove("on")})};
+/* titration */
+var V=0;function tit(){V=Math.round(V*100)/100;$("vol").textContent=V.toFixed(2);$("lv").style.height=Math.max(0,100-V*3)+"%";
+var c=V<24.5?"#facc15":V<25?"#fb923c":V<25.05?"#f97316":"#ef4444";$("fl").style.background=c;
+$("msg").textContent=V<24?"Still yellow: alkali in excess. Keep adding.":V<25?"Getting close! Go drop by drop.":V<25.1?"🎉 End-point! Colour just changed to orange: ~25.0 cm³":"Past the end-point: flask is red (acid in excess).";
+var d=$("dr");d.classList.remove("go");void d.offsetWidth;d.classList.add("go")}
+$("a1").onclick=function(){V=Math.min(30,V+1);tit()};$("a2").onclick=function(){V=Math.min(30,V+.05);tit()};$("a3").onclick=function(){V=0;tit()};tit();
+/* calc */
+var ci=-1;$("cn").onclick=function(){var d=$("calc").children;if(ci<3){ci++;d[ci].classList.add("on")}};$("cr").onclick=function(){ci=-1;[].forEach.call($("calc").children,function(d){d.classList.remove("on")})};
+/* quiz */
+var Q=[["Which ion makes a solution alkaline?",["H⁺","OH⁻","Cl⁻"],1],["Acid + carbonate gives salt + water + …",["hydrogen","oxygen","carbon dioxide"],2],["Which apparatus measures exactly 25.0 cm³ of alkali?",["measuring cylinder","pipette","beaker"],1],["Concordant results are within …",["0.20 cm³","1.00 cm³","0.50 cm³"],0],["Methyl orange in acid is …",["yellow","red","pink"],1]],sc=0,an=0;
+$("quiz").innerHTML="";Q.forEach(function(q,i){var d=document.createElement("div");d.className="q";d.innerHTML="<b>"+(i+1)+". "+q[0]+"</b>";q[1].forEach(function(o,j){var b=document.createElement("button");b.textContent=o;b.onclick=function(){if(d.done)return;d.done=1;an++;if(j==q[2]){b.className="r";sc++}else{b.className="w";d.children[q[2]+1].className="r"}$("sc").textContent="Score: "+sc+" / "+an};d.appendChild(b)});$("quiz").appendChild(d)});
+</script></body></html>
